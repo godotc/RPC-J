@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class HttpClient {
 
-    public String send(String hostname, Integer port, Invocation invocation) {
+    public String send(String hostname, Integer port, Invocation invocation) throws IOException {
         // User's configuration
 
         try {
@@ -39,7 +39,7 @@ public class HttpClient {
             return result;
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw e;
         }
     }
 }
